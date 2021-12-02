@@ -21,4 +21,5 @@ describe('Funcionalidade Pré cadastro', () => {
        afterEach(() => {
          cy.screenshot()  
        });
+       
 });
