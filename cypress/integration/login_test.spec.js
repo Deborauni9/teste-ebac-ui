@@ -3,8 +3,8 @@ var faker = require('faker')
 
 context('Funcionalidade Login', () => {
 
-    it('Deve fazer login com sucesso', () => {
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+    it.only('Deve fazer login com sucesso', () => {
+        cy.visit('minha-conta')
         cy.get('.woocommerce-form > :nth-child(1) > label').type('aluno_ebac@teste.com')
         cy.get('#password').type('teste@teste.com')
         cy.get('.woocommerce-form > .button').click()
@@ -20,7 +20,7 @@ context('Funcionalidade Login', () => {
         cy.get('.woocommerce-form > .button').click()
         cy.get('.woocommerce-error').should('contain.text', 'Endereço de e-mail desconhecido. Verifique novamente ou tente seu nome de usuário.')
     });
-    it.only('Deve completar cadastro', () => {
+    it('Deve completar cadastro', () => {
         
         cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
         cy.get('#reg_email').type(faker.internet.email())
